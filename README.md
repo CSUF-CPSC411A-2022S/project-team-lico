@@ -1,1 +1,0 @@
-# Low Income Community Outreach
