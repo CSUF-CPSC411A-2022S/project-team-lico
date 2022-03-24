@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
+import com.example.lico.databinding.FragmentHomePageBinding
 
 
 /**
@@ -19,12 +21,13 @@ class HomePage : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-//        val binding = HomePageBinding.inflate(layoutInflater)
+        val binding = FragmentHomePageBinding.inflate(layoutInflater)
+
 
 
         // Inflate the layout for this fragment
 
-        return inflater.inflate(R.layout.fragment_home_page, container, false)
+        return binding.root
     }
 
 

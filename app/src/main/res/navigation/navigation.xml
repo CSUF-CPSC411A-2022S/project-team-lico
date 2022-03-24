@@ -3,11 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/homePage">
+    app:startDestination="@id/nav_host">
 
     <fragment
-        android:id="@+id/homePage"
+        android:id="@+id/nav_host"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:navGraph="@navigation/navigation"
+        app:defaultNavHost="true">
+        <action
+            android:id="@+id/action_nav_host_to_homePage2"
+            app:destination="@id/homePage2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homePage2"
         android:name="com.example.lico.HomePage"
         android:label="fragment_home_page"
         tools:layout="@layout/fragment_home_page" />
+
 </navigation>
