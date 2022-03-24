@@ -4,8 +4,6 @@ buildscript {
         google()
         mavenCentral()
     }
-    // Create a variable to easily switch the version of the library
-    // Remove comments on ext when working on 6.1 Model 2
     ext {
         navigationVersion = "2.3.5"
     }
@@ -13,7 +11,7 @@ buildscript {
         classpath "com.android.tools.build:gradle:7.0.0"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21"
 
-        // Add safeargs dependencies. Remove comments on classpath only when working on 6.2 Model 2
+        // Add safeargs dependencies.
          classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
         // End of safeargs dependencies
 
