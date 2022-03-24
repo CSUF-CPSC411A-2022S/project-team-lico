@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 //                .navigate(ActivityMainFragmentDirections.actionNavHostToHomePage2())
 //
 //        }
+        // need to add fragment into activity main assign ID to android.navhost...enables navigation(findNavController)
         binding.button.setOnClickListener { view: View ->
             view.findNavController()
                 .navigate(R.id.action_nav_host_to_homePage2)
