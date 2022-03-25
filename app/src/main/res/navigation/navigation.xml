@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/homepage"
         android:name="com.example.lico.Homepage"
-        android:label="fragment_homepage"
+        android:label="Homepage"
         tools:layout="@layout/fragment_homepage" >
         <action
             android:id="@+id/action_homepage_to_discount"
@@ -17,6 +17,6 @@
     <fragment
         android:id="@+id/discount"
         android:name="com.example.lico.Discount"
-        android:label="fragment_discount"
+        android:label="Discounts"
         tools:layout="@layout/fragment_discount" />
 </navigation>
