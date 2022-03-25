@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homepage">
+
+    <fragment
+        android:id="@+id/homepage"
+        android:name="com.example.lico.Homepage"
+        android:label="fragment_homepage"
+        tools:layout="@layout/fragment_homepage" >
+        <action
+            android:id="@+id/action_homepage_to_discount"
+            app:destination="@id/discount" />
+    </fragment>
+    <fragment
+        android:id="@+id/discount"
+        android:name="com.example.lico.Discount"
+        android:label="fragment_discount"
+        tools:layout="@layout/fragment_discount" />
+</navigation>
