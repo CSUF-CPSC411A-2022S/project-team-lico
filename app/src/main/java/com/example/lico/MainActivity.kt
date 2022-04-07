@@ -8,7 +8,7 @@ import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -21,12 +21,12 @@ class MainActivity : AppCompatActivity() {
                 .navigate(R.id.action_nav_host_to_homePage2)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean{
+    fun onCreateOptionsMenu(menu: Menu?): Boolean{
         menuInflater.inflate(R.menu.nav_menu,menu)
         return true
     }
 
-    override fun onOptionsItemSelected(item:MenuItem): Boolean{
+    fun onOptionsItemSelected(item:MenuItem): Boolean{
         when(item.itemId){
             R.id.nav_favorite -> Toast.makeText(this,"Favorite Selected",Toast.LENGTH_SHORT).show()
         }
