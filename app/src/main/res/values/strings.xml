@@ -2,5 +2,9 @@
     <string name="app_name">Lico</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="discount_message">Here are your hand picked Discounts!</string>
+    <string name="event_message">Share local events!</string>
+    <string name="add_message">Add local events!</string>
     <string name="welcome_to_lico">Welcome to Lico</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

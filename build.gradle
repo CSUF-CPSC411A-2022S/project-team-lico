@@ -12,7 +12,7 @@ buildscript {
     }
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.0"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21"
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30'
 
         // Add safeargs dependencies. Remove comments on classpath only when working on 6.2 Model 2
          classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"

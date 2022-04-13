@@ -19,4 +19,16 @@
         android:name="com.example.lico.Discount"
         android:label="Discounts"
         tools:layout="@layout/fragment_discount" />
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.lico.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" />
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.example.lico.ThirdFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third" />
+
+
 </navigation>

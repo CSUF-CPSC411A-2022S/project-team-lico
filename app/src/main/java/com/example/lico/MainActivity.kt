@@ -2,15 +2,19 @@ package com.example.lico
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.example.lico.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        val binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         /**
          * Remove comments only when working on 6.1 Model 3.
@@ -20,8 +24,8 @@ class MainActivity : AppCompatActivity() {
          * fragment that opened the current fragment, thereby back tracking its way to the first
          * fragment.
          */
-         val navController = this.findNavController(R.id.nav_host)
-         NavigationUI.setupActionBarWithNavController(this,navController)
+         navController= Navigation.findNavController(this, R.id.nav_host)
+        setupWithNavController(binding.bottomNavigationView, navController)
     }
 
     // create a database (the hardest part according to prof)
@@ -48,5 +52,24 @@ class MainActivity : AppCompatActivity() {
     // can start setting up how list of resources would look like and the view of the resource for now
     // will be the same for each resource, the values would change with liveData
     // can start building entity and data access object
+
+    /*
+        override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        /**
+         * Remove comments only when working on 6.1 Model 3.
+         * navController refers to our navigation fragment. The setupActionBarWithnavController
+         * method connects our navController to the ActionBar that maintains the "back stack" which
+         * is the succession of fragments that were opened. Pressing the Up button will display the
+         * fragment that opened the current fragment, thereby back tracking its way to the first
+         * fragment.
+         */
+         val navController = this.findNavController(R.id.nav_host)
+         NavigationUI.setupActionBarWithNavController(this,navController)
+    }
+    */
 
 }
