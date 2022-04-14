@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homepage_to_discount"
             app:destination="@id/discount" />
+        <action
+            android:id="@+id/action_homepage_to_resource"
+            app:destination="@id/resource" />
     </fragment>
     <fragment
         android:id="@+id/discount"
@@ -20,15 +23,10 @@
         android:label="Discounts"
         tools:layout="@layout/fragment_discount" />
     <fragment
-        android:id="@+id/secondFragment"
-        android:name="com.example.lico.SecondFragment"
-        android:label="fragment_second"
-        tools:layout="@layout/fragment_second" />
-    <fragment
-        android:id="@+id/thirdFragment"
-        android:name="com.example.lico.ThirdFragment"
-        android:label="fragment_third"
-        tools:layout="@layout/fragment_third" />
+        android:id="@+id/resource"
+        android:name="com.example.lico.Resource"
+        android:label="fragment_resource"
+        tools:layout="@layout/fragment_resource" />
 
 
 </navigation>
