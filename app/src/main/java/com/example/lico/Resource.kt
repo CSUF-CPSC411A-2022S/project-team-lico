@@ -13,6 +13,9 @@ import android.widget.Toast
 
 class Resource:Fragment() {
 
+    //Array for ListView
+    private var array = arrayOf("Resource1", "Resource2", "Resource3", "Resource4")
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -22,5 +25,11 @@ class Resource:Fragment() {
         // Inflate the layout for this fragment
         return binding.root
     }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val listView = view?.findViewById(R.id.list) as ListView
+    }
+
 
 }
