@@ -1,5 +1,10 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
+    ext {
+        room_version = '2.4.0-alpha03'
+        // Required for setting navigation version
+        navigationVersion = "2.3.5"
+    }
     repositories {
         google()
         mavenCentral()
@@ -12,7 +17,7 @@ buildscript {
     }
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.0"
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.20'
 
         // Add safeargs dependencies. Remove comments on classpath only when working on 6.2 Model 2
          classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
