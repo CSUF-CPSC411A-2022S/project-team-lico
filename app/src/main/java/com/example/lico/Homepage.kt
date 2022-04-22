@@ -44,7 +44,12 @@ class Homepage : Fragment() {
          */
         binding.modify.setOnClickListener { view: View ->
             view.findNavController()
-                .navigate(R.id.action_homepage_to_discount)
+                .navigate(R.id.action_discountListFragment_to_discountItemFragment)
+        }
+
+        binding.resourceModify.setOnClickListener { view: View ->
+            view.findNavController()
+                .navigate(R.id.action_homepage_to_resource)
         }
 
         // Return a link to the layout root

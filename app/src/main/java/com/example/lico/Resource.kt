@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
-import com.example.lico.databinding.FragmentDiscountBinding
 import android.widget.ListView
 import android.widget.Toast
+import com.example.lico.databinding.FragmentResourceBinding
 
 class Resource:Fragment() {
     override fun onCreateView(
@@ -17,7 +17,7 @@ class Resource:Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding = FragmentDiscountBinding.inflate((layoutInflater))
+        val binding = FragmentResourceBinding.inflate((layoutInflater))
         // Inflate the layout for this fragment
         return binding.root
     }
