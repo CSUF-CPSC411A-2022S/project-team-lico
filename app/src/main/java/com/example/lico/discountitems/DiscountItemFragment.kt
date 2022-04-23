@@ -24,7 +24,7 @@ class DiscountItemFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Retrieve arguments passed from the RecyclerView
-        val args = DiscountItemFragmentArgs.fromBundle(
+        val args = FragmentDiscountItemArgs.fromBundle(
             requireArguments()
         )
 
