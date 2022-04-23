@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lico.database.Discount
 import com.example.lico.databinding.FragmentDiscountItemBinding
+import com.example.lico.databinding.DiscountItemBinding
 
 /**
  * A RecyclerView adapter that uses the DiffCallback for better performance and a listener to handle
@@ -19,7 +20,7 @@ class DiscountListAdapter(val clickListener: DiscountListener) : ListAdapter<Dis
      * Inner class used to store data about each element in the RecyclerView. We provide a binding
      * to make it easy to access elements of the layout.
      */
-    class ItemViewHolder(val binding: FragmentDiscountItemBinding) :
+    class ItemViewHolder(val binding: DiscountItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         /**
@@ -38,7 +39,7 @@ class DiscountListAdapter(val clickListener: DiscountListener) : ListAdapter<Dis
         // We use an inflater based on the parent (DiscountListFragment) and create an
         // ItemViewHolder with binding to the layout to simplify access.
         val layoutInflater = LayoutInflater.from(parent.context)
-        val binding = FragmentDiscountItemBinding.inflate(layoutInflater, parent, false)
+        val binding = DiscountItemBinding.inflate(layoutInflater, parent, false)
         return ItemViewHolder(binding)
     }
 
