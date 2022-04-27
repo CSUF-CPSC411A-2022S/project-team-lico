@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.example.lico.databinding.FragmentHomepageBinding
 
@@ -20,7 +21,8 @@ class Homepage : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding = FragmentHomepageBinding.inflate((layoutInflater))
+        val binding: FragmentHomepageBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_homepage, container, false)
         // Inflate the layout for this fragment
         // TODO: Assign the address value from TestProfile to the address EditText view
 
@@ -44,7 +46,7 @@ class Homepage : Fragment() {
          */
         binding.modify.setOnClickListener { view: View ->
             view.findNavController()
-                .navigate(R.id.action_discountListFragment_to_discountItemFragment)
+                .navigate(R.id.action_homepage_to_discountListFragment)
         }
 
         binding.resourceModify.setOnClickListener { view: View ->

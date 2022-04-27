@@ -1,6 +1,6 @@
 package com.example.lico
 
-import android.R
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +9,8 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import android.widget.ListView
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import com.example.lico.databinding.FragmentHomepageBinding
 import com.example.lico.databinding.FragmentResourceBinding
 
 class Resource:Fragment() {
@@ -17,7 +19,8 @@ class Resource:Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding = FragmentResourceBinding.inflate((layoutInflater))
+        val binding: FragmentResourceBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_resource , container, false)
         // Inflate the layout for this fragment
         return binding.root
     }

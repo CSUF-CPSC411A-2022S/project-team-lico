@@ -26,7 +26,11 @@
     <fragment
         android:id="@+id/discountItemFragment"
         android:name="com.example.lico.discountitems.DiscountItemFragment"
-        android:label="DiscountItemFragment" />
+        android:label="DiscountItemFragment" >
+        <argument
+            android:name="discountId"
+            app:argType="long" />
+    </fragment>
     <fragment
         android:id="@+id/discountListFragment"
         android:name="com.example.lico.discountlist.DiscountListFragment"
