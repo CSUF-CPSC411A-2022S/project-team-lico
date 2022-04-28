@@ -9,10 +9,11 @@ import androidx.room.RoomDatabase
  * Manages the database that stores the table and its entitites.
  * The abstract class should inherit RoomDatabase()
  */
-@Database(entities = [Discount::class], version = 1, exportSchema = false)
+@Database(entities = [Discount::class, Profile::class], version = 1, exportSchema = false)
 abstract class LicoDatabase: RoomDatabase() {
     // Data access object for the entity.
     abstract val discountDao: DiscountDao
+    abstract val profileDao: ProfileDao
 
     companion object {
         // Holds a reference to the database.
