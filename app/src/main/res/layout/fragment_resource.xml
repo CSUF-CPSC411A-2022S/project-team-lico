@@ -16,7 +16,7 @@
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Resource"
+            android:text="Resources"
             android:textSize="30sp"
             android:textColor="@android:color/black"
             android:textAlignment="center" />
