@@ -11,34 +11,22 @@
         android:label="Homepage"
         tools:layout="@layout/fragment_homepage" >
         <action
+            android:id="@+id/action_homepage_to_discount"
+            app:destination="@id/discount" />
+        <action
             android:id="@+id/action_homepage_to_resource"
             app:destination="@id/resource" />
-        <action
-            android:id="@+id/action_homepage_to_discountListFragment"
-            app:destination="@id/discountListFragment" />
     </fragment>
-
+    <fragment
+        android:id="@+id/discount"
+        android:name="com.example.lico.Discount"
+        android:label="Discounts"
+        tools:layout="@layout/fragment_discount" />
     <fragment
         android:id="@+id/resource"
-        android:name="com.example.lico.Resource"
+        android:name="com.example.lico.resourceItems.Resource"
         android:label="fragment_resource"
         tools:layout="@layout/fragment_resource" />
-    <fragment
-        android:id="@+id/discountItemFragment"
-        android:name="com.example.lico.discountitems.DiscountItemFragment"
-        android:label="DiscountItemFragment" >
-        <argument
-            android:name="discountId"
-            app:argType="long" />
-    </fragment>
-    <fragment
-        android:id="@+id/discountListFragment"
-        android:name="com.example.lico.discountlist.DiscountListFragment"
-        android:label="DiscountListFragment" >
-        <action
-            android:id="@+id/action_discountListFragment_to_discountItemFragment"
-            app:destination="@id/discountItemFragment" />
-    </fragment>
 
 
 </navigation>
