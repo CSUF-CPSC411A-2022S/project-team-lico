@@ -4,10 +4,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <!-- Variable that holds information about a single intersection. -->
+        <variable
+            name="resource"
+            type="com.example.lico.database.ResourceEntity" />
 
+        <!-- Variable that holds a reference to the click listener. -->
+        <variable
+            name="clickListener"
+            type="com.example.lico.resourceList.ResourceListener" />
     </data>
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".resourceItems.Resource">
@@ -17,15 +26,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Resources"
-            android:textSize="30sp"
+            android:textAlignment="center"
             android:textColor="@android:color/black"
-            android:textAlignment="center" />
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ListView
             android:id="@+id/resourceListView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/name" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name" />
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -13,8 +13,8 @@ import androidx.navigation.fragment.findNavController
 import com.example.lico.R
 import com.example.lico.database.LicoDatabase
 import com.example.lico.database.ResourceEntity
-import com.example.lico.database.databinding.ResourceItemBinding
-import com.example.lico.discountitems.ResourceItemViewModelFactory
+import com.example.lico.databinding.FragmentDiscountItemBinding
+import com.example.lico.databinding.FragmentResourceBinding
 
 
 class Resource:Fragment() {
@@ -23,7 +23,7 @@ class Resource:Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding: ResourceItemBinding =
+        val binding: FragmentResourceBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_resource, container, false)
         // Inflate the layout for this fragment
         return binding.root

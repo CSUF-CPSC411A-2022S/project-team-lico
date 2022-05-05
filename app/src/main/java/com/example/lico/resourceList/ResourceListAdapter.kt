@@ -6,26 +6,26 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lico.database.ResourceEntity
-import com.example.lico.database.databinding.ResourceItemBinding
+import com.example.lico.databinding.FragmentResourceBinding
 
 /**
  * A RecyclerView adapter that uses the DiffCallback for better performance and a listener to handle
  * clicks/taps on each item.
  */
-class IntersectionListAdapter(val clickListener: IntersectionListener) : ListAdapter<ResourceEntity,
-        IntersectionListAdapter.ItemViewHolder>(IntersectionDiffCallback()) {
+class ResourceListAdapter(val clickListener: ResourceListener) : ListAdapter<ResourceEntity,
+        ResourceListAdapter.ItemViewHolder>(ResourceDiffCallback()) {
 
     /**
      * Inner class used to store data about each element in the RecyclerView. We provide a binding
      * to make it easy to access elements of the layout.
      */
-    class ItemViewHolder(val binding: ResourceItemBinding) :
+    class ItemViewHolder(val binding: FragmentResourceBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         /**
-         * Assign an intersection object and clickListener to the ItemViewHolder
+         * Assign an Resource object and clickListener to the ItemViewHolder
          */
-        fun bind(item: ResourceEntity, clickListener: IntersectionListener) {
+        fun bind(item: ResourceEntity, clickListener: ResourceListener) {
             binding.resource = item
             binding.clickListener = clickListener
         }
@@ -35,10 +35,10 @@ class IntersectionListAdapter(val clickListener: IntersectionListener) : ListAda
      * Creates a View to visualize one element in the RecyclerView.
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        // We use an inflater based on the parent (IntersectionListFragment) and create an
+        // We use an inflater based on the parent (ResourceListFragment) and create an
         // ItemViewHolder with binding to the layout to simplify access.
         val layoutInflater = LayoutInflater.from(parent.context)
-        val binding = ResourceItemBinding.inflate(layoutInflater, parent, false)
+        val binding = FragmentResourceBinding.inflate(layoutInflater, parent, false)
         return ItemViewHolder(binding)
     }
 
@@ -56,16 +56,16 @@ class IntersectionListAdapter(val clickListener: IntersectionListener) : ListAda
 /**
  * Manages a RecyclerView list using the Eugene W. Myers's difference algorithm to reduce processing.
  */
-class IntersectionDiffCallback : DiffUtil.ItemCallback<ResourceEntity>() {
+class ResourceDiffCallback : DiffUtil.ItemCallback<ResourceEntity>() {
     /**
-     * We use intersectionId because it is a unique ID referring to a single element.
+     * We use ResourceId because it is a unique ID referring to a single element.
      */
     override fun areItemsTheSame(oldItem: ResourceEntity, newItem: ResourceEntity): Boolean {
         return oldItem.resourceid == newItem.resourceid
     }
 
     /**
-     * We check all properties to check equality between Intersection objects.
+     * We check all properties to check equality between Resource objects.
      */
     override fun areContentsTheSame(oldItem: ResourceEntity, newItem: ResourceEntity): Boolean {
         return oldItem.resourceName == newItem.resourceName && oldItem.resourceInfo == newItem.resourceInfo
@@ -76,6 +76,6 @@ class IntersectionDiffCallback : DiffUtil.ItemCallback<ResourceEntity>() {
  * Listener that accepts a lambda function clickListener. It will be called when an element of the
  * RecyclerView is clicked/tapped.
  */
-class IntersectionListener(val clickListener: (intersectionId: Long) -> Unit) {
+class ResourceListener(val clickListener: (resourceId: Long) -> Unit) {
     fun onClick(resourceEntity: ResourceEntity) = clickListener(resourceEntity.resourceid)
 }
