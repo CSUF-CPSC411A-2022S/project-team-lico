@@ -20,7 +20,7 @@
     <fragment
         android:id="@+id/resource"
         android:name="com.example.lico.resourceItems.Resource"
-        android:label="fragment_resource"
+        android:label="Resources"
         tools:layout="@layout/fragment_resource" >
         <argument
             android:name="resourceId"
