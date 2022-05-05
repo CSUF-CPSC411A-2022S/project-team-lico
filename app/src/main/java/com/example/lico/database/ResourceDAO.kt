@@ -9,6 +9,11 @@ import androidx.room.Update
 @Dao
 interface ResourceDAO {
 
+    // Add a resource entity to a table in the database.
+    // We use suspend to run the function asynchronously (coroutine).
+    @Insert
+    suspend fun insert(resourceEntity: ResourceEntity)
+
     @Query("SELECT * from resource_table WHERE resourceid = :key")
     fun get(key: Long): LiveData<ResourceEntity>?
 
