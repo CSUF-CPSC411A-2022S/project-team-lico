@@ -24,13 +24,6 @@ class Homepage : Fragment() {
         val binding: FragmentHomepageBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_homepage, container, false)
         // Inflate the layout for this fragment
-        // TODO: Assign the address value from TestProfile to the address EditText view
-
-        /**
-         * TODO: Do not implement unless working on 6.1 Model 2
-         * Add setOnClickListener to the Modify button that navigates from Profile to Modified
-         * fragment.
-         */
 
         /**
          * Do not implement unless working on 6.2 Model 1

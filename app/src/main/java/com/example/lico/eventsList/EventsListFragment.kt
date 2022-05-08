@@ -17,7 +17,7 @@ import com.example.lico.eventsList.EventsViewModel
 import com.example.lico.eventsList.EventsViewModelFactory
 
 /**
- * Fragment that displays the input text fields and Discount list
+ * Fragment that displays the input text fields and Events list
  */
 class EventsListFragment : Fragment() {
 
@@ -32,26 +32,26 @@ class EventsListFragment : Fragment() {
         // Get reference to the application
         val application = requireNotNull(this.activity).application
 
-        // Retrieve Discount data access object.
+        // Retrieve Events data access object.
         val dataSource = LicoDatabase.getInstance(application).eventsDao
 
-        // Create a factory that generates DiscountViewModels connected to the database.
+        // Create a factory that generates EventsViewModels connected to the database.
         val viewModelFactory = EventsViewModelFactory(dataSource, application)
 
-        // Generate an DiscountViewModel using the factory.
+        // Generate an EventsViewModel using the factory.
         val eventsViewModel =
             ViewModelProvider(
                 this, viewModelFactory).get(EventsViewModel::class.java)
 
-        // Connect the DiscountViewModel with the variable in the layout
-        binding.eventsViewModel = EventsViewModel
+        // Connect the EventsViewModel with the variable in the layout
+        binding.eventsViewModel = eventsViewModel
         // Assign the lifecycle owner to the activity so it manages the data accordingly.
         binding.lifecycleOwner = this
 
         // Provide a lambda function that is called when the RecyclerView item is selected.
         var eventsAdapter = EventsListAdapter(EventsListener {
                 eventsId ->
-            // Navigate to the Discount view and provide the id of the Discount referenced
+            // Navigate to the Events view and provide the id of the Events referenced
             // by the select RecyclerView item.
 
             this.findNavController().navigate(
@@ -59,11 +59,11 @@ class EventsListFragment : Fragment() {
                     .actionEventsListFragmentToEventsItemFragment(eventsId)
             )
         })
-        // Attach discount adapter.
+        // Attach Events adapter.
         binding.eventsRecyclerview.adapter = eventsAdapter
 
-        // Submit an updated list to the discount listAdapter whenever it changes. Take note
-        // discountList is a LiveData object.
+        // Submit an updated list to the Events listAdapter whenever it changes. Take note
+        // EventsList is a LiveData object.
         eventsViewModel.eventsList.observe(viewLifecycleOwner, Observer {
             it?.let {
                 eventsAdapter.submitList(it)

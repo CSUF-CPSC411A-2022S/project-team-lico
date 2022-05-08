@@ -7,11 +7,11 @@ import com.example.lico.database.EventsDao
 import kotlinx.coroutines.launch
 
 /**
- * DiscountViewModel used for data binding. Provides a connection to the database
+ * EventsViewModel used for data binding. Provides a connection to the database
  * for storing and retrieving corresponding values.
  */
 class EventsViewModel(
-    val database: EventsDao, // Data access object for the Discount entity
+    val database: EventsDao, // Data access object for the Events entity
     application: Application
 ) : AndroidViewModel(application) {
 
@@ -19,8 +19,8 @@ class EventsViewModel(
     var name = MutableLiveData("")
     var description = MutableLiveData("")
 
-    // Retrieves all Discount objects from the database
-    // Represented as a LiveData<List<Discount>>
+    // Retrieves all Events objects from the database
+    // Represented as a LiveData<List<Events>>
     val eventsList = database.getAllEvents()
 
     /**
@@ -30,7 +30,7 @@ class EventsViewModel(
         // Launch coroutines in the viewModelScope so that the coroutines are automatically
         // canceled when the ViewModel is destroyed.
         viewModelScope.launch {
-            // Create Discount object using data stored in the EditText views
+            // Create Events object using data stored in the EditText views
             var events = Events()
             events.name = name.value.toString()
             events.description = description.value.toString()

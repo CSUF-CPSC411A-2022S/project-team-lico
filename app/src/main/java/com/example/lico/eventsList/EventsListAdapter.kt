@@ -24,7 +24,7 @@ class EventsListAdapter(val clickListener: EventsListener) : ListAdapter<Events,
         RecyclerView.ViewHolder(binding.root) {
 
         /**
-         * Assign an Discount object and clickListener to the ItemViewHolder
+         * Assign an Events object and clickListener to the ItemViewHolder
          */
         fun bind(item: Events, clickListener: EventsListener) {
             binding.events = item
@@ -36,7 +36,7 @@ class EventsListAdapter(val clickListener: EventsListener) : ListAdapter<Events,
      * Creates a View to visualize one element in the RecyclerView.
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        // We use an inflater based on the parent (DiscountListFragment) and create an
+        // We use an inflater based on the parent (EventsListFragment) and create an
         // ItemViewHolder with binding to the layout to simplify access.
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = EventsItemBinding.inflate(layoutInflater, parent, false)
@@ -66,7 +66,7 @@ class EventsDiffCallback : DiffUtil.ItemCallback<Events>() {
     }
 
     /**
-     * We check all properties to check equality between Discount objects.
+     * We check all properties to check equality between Events objects.
      */
     override fun areContentsTheSame(oldItem: Events, newItem: Events): Boolean {
         return oldItem.name == newItem.name && oldItem.description == newItem.description

@@ -9,10 +9,10 @@ import kotlinx.coroutines.launch
 
 class EventsItemViewModel(
     val eventsId: Long,
-    val database: EventsDao, // Data access object for the Discount entity
+    val database: EventsDao, // Data access object for the Events entity
     application: Application
 ) : AndroidViewModel(application) {
 
-    // Retrieves a LiveData-wrapped discount object given its ID
+    // Retrieves a LiveData-wrapped Events object given its ID
     val events = database.get(eventsId)
 }

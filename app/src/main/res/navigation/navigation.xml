@@ -56,7 +56,10 @@
     <fragment
         android:id="@+id/eventsItemFragment"
         android:name="com.example.lico.eventsItems.EventsItemFragment"
-        android:label="EventsItemFragment" />
+        android:label="EventsItemFragment" >
+        <argument android:name="eventsId"
+            app:argType="long" />
+    </fragment>
 
 
 </navigation>
