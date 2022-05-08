@@ -54,6 +54,12 @@ class Homepage : Fragment() {
                 .navigate(R.id.action_homepage_to_resource)
         }
 
+        binding.eventsModify.setOnClickListener { view: View ->
+            view.findNavController()
+                .navigate(R.id.action_homepage_to_eventsListFragment)
+        }
+
+
         // Return a link to the layout root
         return binding.root
     }

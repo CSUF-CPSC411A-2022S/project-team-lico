@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_homepage_to_discountListFragment"
             app:destination="@id/discountListFragment" />
+        <action
+            android:id="@+id/action_homepage_to_eventsListFragment"
+            app:destination="@id/eventsListFragment" />
     </fragment>
     <fragment
         android:id="@+id/resource"
@@ -42,6 +45,18 @@
             android:name="discountId"
             app:argType="long" />
     </fragment>
+    <fragment
+        android:id="@+id/eventsListFragment"
+        android:name="com.example.lico.eventsList.EventsListFragment"
+        android:label="EventsListFragment" >
+        <action
+            android:id="@+id/action_eventsListFragment_to_eventsItemFragment"
+            app:destination="@id/eventsItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventsItemFragment"
+        android:name="com.example.lico.eventsItems.EventsItemFragment"
+        android:label="EventsItemFragment" />
 
 
 </navigation>
