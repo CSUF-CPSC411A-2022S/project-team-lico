@@ -15,9 +15,11 @@ class DiscountViewModel(
     application: Application
 ) : AndroidViewModel(application) {
 
-    // Used to assign and retrieve name and location values from the interface.
+
     var name = MutableLiveData("")
     var location = MutableLiveData("")
+    var totalDiscount = MutableLiveData("")
+    var couponCode = MutableLiveData("")
 
     // Retrieves all Discount objects from the database
     // Represented as a LiveData<List<Discount>>
@@ -31,14 +33,18 @@ class DiscountViewModel(
         // canceled when the ViewModel is destroyed.
         viewModelScope.launch {
             // Create Discount object using data stored in the EditText views
+
             var discount = Discount()
             discount.name = name.value.toString()
             discount.location = location.value.toString()
+            discount.totalDiscount = totalDiscount.value.toString()
+            discount.couponCode = couponCode.value.toString()
 
             // Insert data to the database using the insert coroutine.
             database.insert(discount)
         }
     }
+
 
     /**
      * Deletes all discount entities in the database.

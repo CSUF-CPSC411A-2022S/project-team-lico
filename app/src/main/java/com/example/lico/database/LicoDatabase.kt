@@ -4,13 +4,14 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.sqlite.db.SupportSQLiteDatabase
 import java.util.*
 
 /**
  * Manages the database that stores the table and its entitites.
  * The abstract class should inherit RoomDatabase()
  */
-@Database(entities = [ResourceEntity::class, Discount::class, Events::class], version = 3, exportSchema = false)
+@Database(entities = [ResourceEntity::class, Discount::class, Events::class], version = 7, exportSchema = false)
 abstract class LicoDatabase: RoomDatabase() {
     // Data access object for the entity.
     abstract val resourceDao: ResourceDAO
@@ -37,15 +38,18 @@ abstract class LicoDatabase: RoomDatabase() {
                 // a new database instance. The next time it is called, the database instance
                 // already exists and does not need to be recreated.
                 if (instance == null) {
+
                     instance = Room.databaseBuilder(
                         context.applicationContext,
                         LicoDatabase::class.java, // Your database class
                         "lico_database"
                     )
-                        .fallbackToDestructiveMigration()
-                        .build()
+                        .fallbackToDestructiveMigration().allowMainThreadQueries()
+                        .createFromAsset("database/discounts.db").build()
+
                     INSTANCE = instance
                 }
+
                 // Return database instance; smart cast to be non-null.
                 return instance
             }

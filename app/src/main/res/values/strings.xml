@@ -22,4 +22,17 @@
         <item>Contact Us</item>
     </string-array>
 
+    //Discounts Array
+    <string-array name="discountArray">
+        <item>Walmart: 88 E Orangethorpe Ave, Anaheim, CA 92801: 25%: 324I5UBF</item>
+        <item>Target: 200 W Orangethorpe Ave, Fullerton, CA 92832: 30%: 534AG35A</item>
+        <item>Walgreens: 1826 W Orangethorpe Ave, Fullerton, CA 92833: 20%: 86GA4G6A</item>
+        <item>Black Bear Diner: 1011 N Harbor Blvd, Fullerton, CA 92832: 10%: A658G4A5</item>
+        <item>Pizza Hut: 400 E Commonwealth Ave, Fullerton, CA 92832: 15%: GS5H874S</item>
+        <item>Titan Shops: 800 N State College Blvd, Fullerton, CA 92831: 40%: G468SAD54</item>
+        <item>Pollys Pies: 136 N Raymond Ave, Fullerton, CA 92831: 15%: 18765AG5</item>
+        <item>Barnes n Noble: Amerige Heights Town Center, 1923 W Malvern Ave, Fullerton, CA 92833: 20%: HYS6584F</item>
+        <item>The Home Depot: 625 S Placentia Ave, Fullerton, CA 92831: 20%: SGFH6815</item>
+    </string-array>
+
 </resources>

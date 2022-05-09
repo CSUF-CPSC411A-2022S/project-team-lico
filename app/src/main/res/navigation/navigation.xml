@@ -32,7 +32,7 @@
     <fragment
         android:id="@+id/discountListFragment"
         android:name="com.example.lico.discountlist.DiscountListFragment"
-        android:label="DiscountListFragment" >
+        android:label="Exclusive Discounts" >
         <action
             android:id="@+id/action_discountListFragment_to_discountItemFragment"
             app:destination="@id/discountItemFragment" />

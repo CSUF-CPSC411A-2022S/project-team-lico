@@ -22,15 +22,30 @@ data class Discount(
     @PrimaryKey(autoGenerate = true)
     var discountId: Long = 0L,
 
-    // Non-rprimary key column. Data type is specified in the property.
+    // Non-primary key column. Data type is specified in the property.
     @ColumnInfo()
     var name: String = "",
 
-    // Non-rprimary key column. Data type is specified in the property.
+    // Non-primary key column. Data type is specified in the property.
     @ColumnInfo()
     var location: String = "",
 
-    // Non-rprimary key column. Data type is specified in the property.
+    // Non-primary key column. Data type is specified in the property.
     @ColumnInfo()
-    var discount: Double = 0.0
+    var totalDiscount: String = "",
+
+    // Non-primary key column. Data type is specified in the property.
+    @ColumnInfo()
+    var couponCode: String = "",
+
 )
+// Manual sql statements to create preloaded database table discount_table
+//INSERT INTO discount_table (discountId, name, location, totalDiscount, couponCode) VALUES (168413, "Walmart", "88 E Orangethorpe Ave Anaheim CA 92801", "25%", "Coupon Code: 324I5UBF")
+//INSERT INTO discount_table (discountId, name, location, totalDiscount, couponCode) VALUES (234567, "Target", "200 W Orangethorpe Ave Fullerton CA 92832", "30%", "Coupon Code: 534AG35A")
+//INSERT INTO discount_table (discountId, name, location, totalDiscount, couponCode) VALUES (947865, "Walgreens", "1826 W Orangethorpe Ave Fullerton CA 92833", "20%", "Coupon Code: 86GA4G6A")
+//INSERT INTO discount_table (discountId, name, location, totalDiscount, couponCode) VALUES (467356, "Black Bear Diner", "1011 N Harbor Blvd Fullerton, CA 92832", "10%", "Coupon Code: A658G4A5")
+//INSERT INTO discount_table (discountId, name, location, totalDiscount, couponCode) VALUES (845763, "Pizza Hut", "400 E Commonwealth Ave Fullerton CA 92832", "15%", "Coupon Code: GS5H874S")
+//INSERT INTO discount_table (discountId, name, location, totalDiscount, couponCode) VALUES (364573, "Titan Shops", "800 N State College Blvd Fullerton, CA 92831", "40%", "Coupon Code: G468SAD54")
+//INSERT INTO discount_table (discountId, name, location, totalDiscount, couponCode) VALUES (847869, "Polly's Pies", "136 N Raymond Ave Fullerton CA 92831", "15%", "Coupon Code: 18765AG5")
+//INSERT INTO discount_table (discountId, name, location, totalDiscount, couponCode) VALUES (357456, "Barnes & Noble", "Amerige Heights Town Center 1923 W Malvern Ave Fullerton CA 92833", "20%", "Coupon Code: HYS6584F")
+//INSERT INTO discount_table (discountId, name, location, totalDiscount, couponCode) VALUES (845688, "The Home Depot", "625 S Placentia Ave, Fullerton CA 92831"," 20%", "Coupon Code: SGFH6815")

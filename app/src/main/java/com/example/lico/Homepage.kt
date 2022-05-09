@@ -37,7 +37,7 @@ class Homepage : Fragment() {
          * Replace resource ID of the navigation actions with method calls using the
          * ProfileDirections object. Pass parameters accordingly.
          */
-        binding.modify.setOnClickListener { view: View ->
+        binding.discounts.setOnClickListener { view: View ->
             view.findNavController()
                 .navigate(R.id.action_homepage_to_discountListFragment)
         }

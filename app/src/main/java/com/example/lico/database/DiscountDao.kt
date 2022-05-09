@@ -17,6 +17,10 @@ interface DiscountDao {
     @Insert
     suspend fun insert(discount: Discount)
 
+    // Add a discount entity to a table in the database.
+    @Insert
+    fun initialize(discount: Discount)
+
     // Update an discount entity to a table in the database. Often uses the primary key
     // We use suspend to run the function asynchronously (coroutine).
     @Update
@@ -38,4 +42,6 @@ interface DiscountDao {
     // We use suspend to run the function asynchronously (coroutine).
     @Query("DELETE from discount_table")
     suspend fun clear()
+
+
 }

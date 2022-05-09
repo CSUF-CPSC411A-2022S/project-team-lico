@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.lico.R
+import com.example.lico.database.Discount
 import com.example.lico.database.LicoDatabase
 import com.example.lico.databinding.FragmentDiscountListBinding
 
@@ -39,6 +40,8 @@ class DiscountListFragment : Fragment() {
         val discountViewModel =
             ViewModelProvider(
                 this, viewModelFactory).get(DiscountViewModel::class.java)
+
+
 
         // Connect the DiscountViewModel with the variable in the layout
         binding.discountViewModel = discountViewModel

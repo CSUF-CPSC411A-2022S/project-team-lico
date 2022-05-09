@@ -49,6 +49,40 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/name" />
 
+        <!-- @= indicates that value in the edit text is copied to the ViewModel's location -->
+        <EditText
+            android:id="@+id/totalDiscount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:ems="10"
+            android:hint="Discount Amount"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="@={discountViewModel.totalDiscount}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/location" />
+
+        <!-- @= indicates that value in the edit text is copied to the ViewModel's location -->
+        <EditText
+            android:id="@+id/couponCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:ems="10"
+            android:hint="Coupon Code"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="@={discountViewModel.couponCode}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/totalDiscount" />
+
         <!-- onClick accepts a lambda function indicated by () -> The body
              of the lambda function calls the insert function
          -->
@@ -61,7 +95,7 @@
             android:onClick="@{() -> discountViewModel.insert()}"
             android:text="Add discount"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/location" />
+            app:layout_constraintTop_toBottomOf="@+id/couponCode" />
 
         <!-- onClick accepts a lambda function indicated by () -> The body
              of the lambda function calls the clear function
@@ -70,23 +104,22 @@
             android:id="@+id/clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
             android:onClick="@{()-> discountViewModel.clear()}"
             android:text="Clear"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/location" />
+            app:layout_constraintBottom_toBottomOf="parent" />
 
-        <TextView
-            android:id="@+id/discountLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:text="Discounts"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/clear" />
+<!--        <TextView-->
+<!--            android:id="@+id/discountLabel"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:text="Discounts"-->
+<!--            android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/clear" />-->
 
         <!-- Recycler view that shows the list of discounts. -->
         <androidx.recyclerview.widget.RecyclerView
@@ -94,14 +127,12 @@
             android:layout_width="409dp"
             android:layout_height="0dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/discountLabel" />
+            app:layout_constraintTop_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
