@@ -11,12 +11,15 @@
 
     //Resources Array
     <string-array name="resourceArray">
-        <item>Name: Blah</item>
-        <item>Name: Blah</item>
-        <item>Name: Blah</item>
-        <item>Name: Blah</item>
-        <item>Name: Blah</item>
-        <item>Name: Blah</item>
+        <item>Fullerton City Hall</item>
+        <item>Fullerton Community Center</item>
+        <item>Housing and Neighborhood Services</item>
+        <item>Financial Assistance</item>
+        <item>Food Assistance</item>
+        <item>Health Care</item>
+        <item>Employment Services</item>
+        <item>Parenting and Childcare</item>
+        <item>Contact Us</item>
     </string-array>
 
 </resources>
