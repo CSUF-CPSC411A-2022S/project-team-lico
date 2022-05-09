@@ -10,7 +10,7 @@ import java.util.*
  * Manages the database that stores the table and its entitites.
  * The abstract class should inherit RoomDatabase()
  */
-@Database(entities = [ResourceEntity::class, Discount::class, Events::class], version = 2, exportSchema = false)
+@Database(entities = [ResourceEntity::class, Discount::class, Events::class], version = 3, exportSchema = false)
 abstract class LicoDatabase: RoomDatabase() {
     // Data access object for the entity.
     abstract val resourceDao: ResourceDAO
