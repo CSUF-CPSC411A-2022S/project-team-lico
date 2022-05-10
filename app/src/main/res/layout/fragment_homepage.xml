@@ -15,6 +15,11 @@
 
         // Discount Button
 
+
+        // Discount Button
+
+        //Resource Button
+
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
@@ -25,10 +30,10 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.47"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/message"
-            app:layout_constraintVertical_bias="0.229" />
+            app:layout_constraintVertical_bias="0.182" />
 
         <TextView
             android:id="@+id/message"
@@ -41,14 +46,11 @@
             android:textSize="60sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.199" />
+            app:layout_constraintVertical_bias="0.318" />
 
-        //Resource Button
-
-        // Events Button
 
         <Button
             android:id="@+id/discounts"
@@ -57,10 +59,10 @@
             android:text="Discounts"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/name"
-            app:layout_constraintVertical_bias="0.27" />
+            app:layout_constraintVertical_bias="0.201" />
 
         <Button
             android:id="@+id/resourceModify"
@@ -73,7 +75,7 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/discounts"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <Button
             android:id="@+id/eventsModify"
@@ -86,7 +88,19 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/resourceModify"
-            app:layout_constraintVertical_bias="0.85" />
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="166dp"
+            android:layout_height="108dp"
+            android:layout_marginBottom="544dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_baseline_location_city" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
