@@ -7,35 +7,34 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
-import com.example.lico.databinding.FragmentHomepageBinding
-import com.example.lico.databinding.FragmentLoginBinding
+import com.example.lico.databinding.FragmentRegisterBinding
+
 
 /**
  * A simple [Fragment] subclass.
- * Use the [login.newInstance] factory method to
+ * Use the [Register.newInstance] factory method to
  * create an instance of this fragment.
  */
-class login : Fragment() {
+class Register : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val binding: FragmentLoginBinding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
+        val binding: FragmentRegisterBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_register, container, false)
+
+        binding.registerBtn.setOnClickListener { view: View ->
+            view.findNavController()
+                .navigate(R.id.action_register2_to_homepage)
+        }
 
         binding.login.setOnClickListener { view: View ->
             view.findNavController()
-                .navigate(R.id.action_login_to_homepage)
-        }
-
-        binding.register.setOnClickListener { view: View ->
-            view.findNavController()
-                .navigate(R.id.action_login_to_register2)
+                .navigate(R.id.action_register2_to_login)
         }
 
         return binding.root
     }
-
 }

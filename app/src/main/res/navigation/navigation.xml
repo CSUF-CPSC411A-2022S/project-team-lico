@@ -67,6 +67,24 @@
         <action
             android:id="@+id/action_login_to_homepage"
             app:destination="@id/homepage" />
+        <action
+            android:id="@+id/action_login_to_register2"
+            app:destination="@id/register2" />
+    </fragment>
+    <fragment
+        android:id="@+id/register2"
+        android:name="com.example.lico.Register"
+        android:label="Register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_register2_to_login"
+            app:destination="@id/login" />
+        <action
+            android:id="@+id/action_register2_to_login2"
+            app:destination="@id/login" />
+        <action
+            android:id="@+id/action_register2_to_homepage"
+            app:destination="@id/homepage" />
     </fragment>
 
 
